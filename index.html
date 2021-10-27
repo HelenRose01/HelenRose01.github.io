@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>AR Marker Tracking</title>
+    <style>
+        /*
+            This version of the AR.js library doesn't appear to work properly with portrait orientation video on mobile.
+            These style rules may make the augmented image roughly align with the video, but it may still be distorted.
+            For best results, allow "auto-rotate"/remove "orientation lock" and use your device in landscape.
+        */
+        body, video, canvas.a-canvas {
+            height: 93vh !important;
+            width: 100vw !important;
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+            object-fit: fill;
+        }
+    </style>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+    // (place additional script here)
+    </script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div id="output" style="position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); background: black; color: white; opacity: 0.8; padding: 0.5em; border-radius: 1em; z-index: 1; font-family: sans-serif;">-</div>
+    <a-scene embedded arjs>
+        <a-marker preset="hiro" id="marker1">
+            <a-box position="0 0.5 0" color="#4cc"></a-box>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
